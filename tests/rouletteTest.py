@@ -2,23 +2,18 @@ import time
 from src.client.eth_client import EthClient
 from config import ADMIN_PKEY
 from src.network.network import Monad
-from src.interfaces.interfaces import RockPaperScissorsInterface
-
+from src.interfaces.interfaces import RouletteInterface
 
 FUNCTIONS_TO_TEST = [
-    {"name": "setMinBet", "args": [int(0.1 * 10**18)]},
-    {"name": "setMaxBet", "args": [int(50 * 10**18)]},
-    {"name": "setHouseEdge", "args": [300]},
-    {"name": "setMaxBetRatio", "args": [4]},
-    {"name": "setMaxWinRatio", "args": [2]},
+    {"name": "withdraw", "args": [int(350 * 10**18)]},
 ]
 
 
-def test_rps():
+def test_roulette():
     client = EthClient(
         account_name="admin wallet", private_key=ADMIN_PKEY, network=Monad
     )
-    interface = RockPaperScissorsInterface
+    interface = RouletteInterface
 
     for item in FUNCTIONS_TO_TEST:
         fn_name = item["name"]
