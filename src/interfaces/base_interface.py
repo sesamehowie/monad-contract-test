@@ -65,3 +65,25 @@ class BaseInterface:
         except Exception as e:
             logger.error(f"Error: {str(e)}")
             return False
+
+    def execute_read_function(self, function_name: str, client: EthClient, args: list):
+        logger.info(
+            f"Contract {self.contract_name} | Executing read function {function_name} with args: {args}"
+        )
+
+        contract = client.get_contract(
+            contract_addr=self.contract_address, abi=self.abi
+        )
+
+        func = contract.get_function_by_name(function_name)
+
+        if args is None:
+            result = func().call()
+        else:
+            result = func(*args).call()
+
+        logger.info(
+            f"Call result of {function_name} on contract {self.contract_name}: {result}"
+        )
+
+        return result

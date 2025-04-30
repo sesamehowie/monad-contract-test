@@ -5,7 +5,10 @@ from src.network.network import Monad
 from src.interfaces.interfaces import ChestsInterface
 
 FUNCTIONS_TO_TEST = [
-    {"name": "withdraw", "args": [int(591 * 10**18)]},
+    {
+        "name": "playerWinnings",
+        "args": ["0x758E36a42De727c71370a55891b0Bf1bDF2c3f2D"],
+    },
 ]
 
 
@@ -20,11 +23,10 @@ def test_chest():
         arg = item["args"]
 
         try:
-            interface.execute_write_function(
+            interface.execute_read_function(
                 function_name=fn_name,
                 client=client,
                 args=arg,
-                value=int(0.1 * 10**18) if fn_name == "play" else 0,
             )
         except Exception as e:
             print(f"Error on call {fn_name} with args {arg}: {str(e)}")

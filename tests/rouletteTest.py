@@ -5,7 +5,7 @@ from src.network.network import Monad
 from src.interfaces.interfaces import RouletteInterface
 
 FUNCTIONS_TO_TEST = [
-    {"name": "withdraw", "args": [int(350 * 10**18)]},
+    {"name": "withdraw", "args": [int(300 * 10**18)]},
 ]
 
 

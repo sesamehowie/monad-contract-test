@@ -3,6 +3,7 @@ from web3 import Web3
 from loguru import logger
 from eth_account import Account
 from ..network.network import Network
+from web3.contract.contract import Contract
 
 
 class EthClient:
@@ -26,7 +27,7 @@ class EthClient:
     def get_nonce(self):
         return self.w3.eth.get_transaction_count(self.address)
 
-    def get_contract(self, contract_addr: str, abi: str):
+    def get_contract(self, contract_addr: str, abi: str) -> Contract:
         return self.w3.eth.contract(address=contract_addr, abi=abi)
 
     def sign_and_send_tx(self, tx_dict: dict):
