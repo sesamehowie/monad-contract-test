@@ -1,7 +1,4 @@
 import time
-from src.client.eth_client import EthClient
-from config import ADMIN_PKEY
-from src.network.network import Monad
 from src.interfaces.interfaces import RouletteInterface
 
 FUNCTIONS_TO_TEST = [
@@ -9,10 +6,7 @@ FUNCTIONS_TO_TEST = [
 ]
 
 
-def test_roulette():
-    client = EthClient(
-        account_name="admin wallet", private_key=ADMIN_PKEY, network=Monad
-    )
+def test_roulette(client):
     interface = RouletteInterface
 
     for item in FUNCTIONS_TO_TEST:

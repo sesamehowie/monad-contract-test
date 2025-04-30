@@ -1,7 +1,4 @@
 import time
-from src.client.eth_client import EthClient
-from config import ADMIN_PKEY
-from src.network.network import Monad
 from src.interfaces.interfaces import ChestsInterface
 
 FUNCTIONS_TO_TEST = [
@@ -12,10 +9,7 @@ FUNCTIONS_TO_TEST = [
 ]
 
 
-def test_chest():
-    client = EthClient(
-        account_name="admin wallet", private_key=ADMIN_PKEY, network=Monad
-    )
+def test_chest(client):
     interface = ChestsInterface
 
     for item in FUNCTIONS_TO_TEST:

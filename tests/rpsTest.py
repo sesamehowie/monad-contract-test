@@ -1,7 +1,4 @@
 import time
-from src.client.eth_client import EthClient
-from config import ADMIN_PKEY
-from src.network.network import Monad
 from src.interfaces.interfaces import RockPaperScissorsInterface
 
 
@@ -14,10 +11,7 @@ FUNCTIONS_TO_TEST = [
 ]
 
 
-def test_rps():
-    client = EthClient(
-        account_name="admin wallet", private_key=ADMIN_PKEY, network=Monad
-    )
+def test_rps(client):
     interface = RockPaperScissorsInterface
 
     for item in FUNCTIONS_TO_TEST:
