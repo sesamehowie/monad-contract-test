@@ -3,11 +3,7 @@ from src.interfaces.interfaces import RockPaperScissorsInterface
 
 
 FUNCTIONS_TO_TEST = [
-    {"name": "setMinBet", "args": [int(0.1 * 10**18)]},
-    {"name": "setMaxBet", "args": [int(50 * 10**18)]},
-    {"name": "setHouseEdge", "args": [300]},
-    {"name": "setMaxBetRatio", "args": [4]},
-    {"name": "setMaxWinRatio", "args": [2]},
+    {"name": "withdrawBankroll", "args": [int(5 * 10**20)]},
 ]
 
 

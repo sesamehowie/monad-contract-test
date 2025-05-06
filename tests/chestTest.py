@@ -3,8 +3,8 @@ from src.interfaces.interfaces import ChestsInterface
 
 FUNCTIONS_TO_TEST = [
     {
-        "name": "playerWinnings",
-        "args": ["0x758E36a42De727c71370a55891b0Bf1bDF2c3f2D"],
+        "name": "withdraw",
+        "args": [int(15 * 10**20)],
     },
 ]
 
@@ -17,7 +17,7 @@ def test_chest(client):
         arg = item["args"]
 
         try:
-            interface.execute_read_function(
+            interface.execute_write_function(
                 function_name=fn_name,
                 client=client,
                 args=arg,

@@ -9,6 +9,7 @@ RPS_CA = "0x21730Db7aE00538A2ccfF5AFA602c37db1C0cC2f"
 PLINKO_CA = "0xB320C0Db0e7D2FEEDa4CF09dbd009450561C551E"
 ROULETTE_CA = "0x32aBcb3ec874c934Bfb81fC66bC7943bf3DAcDE7"
 CHEST_CA = "0x801Bab7088890Ec76Db4841822D9ABc427A6AA8D"
+LOTTERY_CA = "0x96DCb76f2bCa75f1d5592F5D6952abB8753F2885"
 
 
 CONTRACT_CONFIG = {
@@ -16,6 +17,7 @@ CONTRACT_CONFIG = {
     "Plinko": PLINKO_CA,
     "Roulette": ROULETTE_CA,
     "Chests": CHEST_CA,
+    "Lottery": LOTTERY_CA,
 }
 
 
@@ -56,7 +58,7 @@ class BaseInterface:
                 "nonce": client.get_nonce(),
                 "chainId": client.network.chain_id,
                 "gasPrice": client.w3.eth.gas_price,
-                "gas": 250000,
+                "gas": 500000,
                 "data": data,
             }
 
