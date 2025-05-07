@@ -28,10 +28,35 @@ def test_lottery(clients):
     # )
 
     # game_id = int.from_bytes(transaction_receipt["logs"][0]["data"], byteorder="big")
-    time.sleep(30)
-    resLock = LotteryInterface.execute_write_function("lockRound", adminClient, [])
-    assert resLock
+    # time.sleep(63)
+    # resLock = LotteryInterface.execute_write_function("lockRound", adminClient, [])
+    # assert resLock
+    # time.sleep(10)
+    # resSettle = LotteryInterface.execute_write_function("settleRound", adminClient, [])
+    # assert resSettle
+    # resEmergencyRecover = LotteryInterface.execute_write_function(
+    #     "emergencyRecoverFunds", adminClient, [adminClient.address]
+    # )
+    # assert resEmergencyRecover
+    # time.sleep(5)
+    resUnpause = LotteryInterface.execute_write_function("unpause", adminClient, [])
+    assert resUnpause
     time.sleep(5)
-    resSettle = LotteryInterface.execute_write_function("settleRound", adminClient, [])
 
-    assert resSettle
+    resWinningsCheck = [
+        LotteryInterface.execute_read_function(
+            "credit", clientItem, [clientItem.address]
+        )
+        for clientItem in [clientA, clientB]
+    ]
+    assert all(item == 0 for item in resWinningsCheck)
+
+    # resClaims = [
+    #     LotteryInterface.execute_write_function(
+    #         "claim", clientItem, [clientItem.address]
+    #     )
+    #     for clientItem in [clientA, clientB]
+    # ]
+    # assert resClaims
+    # resUnpause = LotteryInterface.execute_write_function("unpause", adminClient, [])
+    # assert resUnpause
