@@ -1,7 +1,6 @@
 import time
 from src.interfaces.interfaces import LotteryInterface
 
-
 def test_lottery(clients):
     clientA, clientB, adminClient = clients
 
@@ -28,28 +27,28 @@ def test_lottery(clients):
     # )
 
     # game_id = int.from_bytes(transaction_receipt["logs"][0]["data"], byteorder="big")
-    # time.sleep(63)
-    # resLock = LotteryInterface.execute_write_function("lockRound", adminClient, [])
-    # assert resLock
-    # time.sleep(10)
-    # resSettle = LotteryInterface.execute_write_function("settleRound", adminClient, [])
-    # assert resSettle
+    # time.sleep(65)
+    resLock = LotteryInterface.execute_write_function("lockRound", adminClient, [])
+    assert resLock
+    time.sleep(15)
+    resSettle = LotteryInterface.execute_write_function("settleRound", adminClient, [])
+    assert resSettle
     # resEmergencyRecover = LotteryInterface.execute_write_function(
     #     "emergencyRecoverFunds", adminClient, [adminClient.address]
     # )
     # assert resEmergencyRecover
     # time.sleep(5)
-    resUnpause = LotteryInterface.execute_write_function("unpause", adminClient, [])
-    assert resUnpause
-    time.sleep(5)
+    # resUnpause = LotteryInterface.execute_write_function("unpause", adminClient, [])
+    # assert resUnpause
+    # time.sleep(5)
 
-    resWinningsCheck = [
-        LotteryInterface.execute_read_function(
-            "credit", clientItem, [clientItem.address]
-        )
-        for clientItem in [clientA, clientB]
-    ]
-    assert all(item == 0 for item in resWinningsCheck)
+    # resWinningsCheck = [
+    #     LotteryInterface.execute_read_function(
+    #         "credit", clientItem, [clientItem.address]
+    #     )
+    #     for clientItem in [clientA, clientB]
+    # ]
+    # assert all(item == 0 for item in resWinningsCheck)
 
     # resClaims = [
     #     LotteryInterface.execute_write_function(

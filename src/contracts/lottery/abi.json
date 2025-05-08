@@ -2,9 +2,9 @@
     {
     "inputs": [
         {
-            "internalType": "address",
-            "name": "operator",
-            "type": "address"
+        "internalType": "address",
+        "name": "operator",
+        "type": "address"
         }
     ],
     "stateMutability": "nonpayable",
@@ -14,22 +14,22 @@
     "anonymous": false,
     "inputs": [
         {
-            "indexed": false,
-            "internalType": "uint256",
-            "name": "id",
-            "type": "uint256"
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "id",
+        "type": "uint256"
         },
         {
-            "indexed": false,
-            "internalType": "address",
-            "name": "player",
-            "type": "address"
+        "indexed": false,
+        "internalType": "address",
+        "name": "player",
+        "type": "address"
         },
         {
-            "indexed": false,
-            "internalType": "uint256",
-            "name": "amount",
-            "type": "uint256"
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
         }
     ],
     "name": "BetPlaced",
@@ -39,16 +39,16 @@
     "anonymous": false,
     "inputs": [
         {
-            "indexed": false,
-            "internalType": "address",
-            "name": "player",
-            "type": "address"
+        "indexed": false,
+        "internalType": "address",
+        "name": "player",
+        "type": "address"
         },
         {
-            "indexed": false,
-            "internalType": "uint256",
-            "name": "amount",
-            "type": "uint256"
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
         }
     ],
     "name": "Claimed",
@@ -58,8 +58,8 @@
     "anonymous": false,
     "inputs": [
         {
-            "indexed": true,
-            "internalType": "address",
+        "indexed": true,
+        "internalType": "address",
         "name": "owner",
         "type": "address"
     },
@@ -121,10 +121,10 @@
     "anonymous": false,
     "inputs": [
         {
-            "indexed": false,
-            "internalType": "address",
-            "name": "account",
-            "type": "address"
+        "indexed": false,
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
         }
     ],
     "name": "Paused",
@@ -134,16 +134,16 @@
     "anonymous": false,
     "inputs": [
         {
-            "indexed": false,
-            "internalType": "uint256",
-            "name": "id",
-            "type": "uint256"
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "id",
+        "type": "uint256"
         },
         {
-            "indexed": false,
-            "internalType": "uint256",
-            "name": "rnd",
-            "type": "uint256"
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "rnd",
+        "type": "uint256"
         }
     ],
     "name": "RandomReady",
@@ -153,16 +153,16 @@
     "anonymous": false,
     "inputs": [
         {
-            "indexed": false,
-            "internalType": "address",
-            "name": "player",
-            "type": "address"
+        "indexed": false,
+        "internalType": "address",
+        "name": "player",
+        "type": "address"
         },
         {
-            "indexed": false,
-            "internalType": "uint256",
-            "name": "amount",
-            "type": "uint256"
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
         }
     ],
     "name": "RefundClaimed",
@@ -172,16 +172,16 @@
     "anonymous": false,
     "inputs": [
         {
-            "indexed": false,
-            "internalType": "uint256",
-            "name": "round",
-            "type": "uint256"
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "round",
+        "type": "uint256"
         },
         {
-            "indexed": false,
-            "internalType": "bytes",
-            "name": "data",
-            "type": "bytes"
+        "indexed": false,
+        "internalType": "bytes",
+        "name": "data",
+        "type": "bytes"
         }
     ],
     "name": "RequestedRandomness",
@@ -191,10 +191,10 @@
     "anonymous": false,
     "inputs": [
         {
-            "indexed": false,
-            "internalType": "uint256",
-            "name": "id",
-            "type": "uint256"
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "id",
+        "type": "uint256"
         }
     ],
     "name": "RoundCanceled",
@@ -204,22 +204,22 @@
     "anonymous": false,
     "inputs": [
         {
-            "indexed": false,
-            "internalType": "uint256",
-            "name": "id",
-            "type": "uint256"
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "id",
+        "type": "uint256"
         },
         {
-            "indexed": false,
-            "internalType": "uint256",
-            "name": "reqId",
-            "type": "uint256"
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "reqId",
+        "type": "uint256"
         },
         {
-            "indexed": false,
-            "internalType": "bool",
-            "name": "jack",
-            "type": "bool"
+        "indexed": false,
+        "internalType": "bool",
+        "name": "jack",
+        "type": "bool"
         }
     ],
     "name": "RoundLocked",
@@ -229,16 +229,16 @@
     "anonymous": false,
     "inputs": [
         {
-            "indexed": false,
-            "internalType": "uint256",
-            "name": "id",
-            "type": "uint256"
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "id",
+        "type": "uint256"
         },
         {
-            "indexed": false,
-            "internalType": "uint64",
-            "name": "endTs",
-            "type": "uint64"
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "endTs",
+        "type": "uint64"
         }
     ],
     "name": "RoundOpened",
@@ -248,28 +248,28 @@
     "anonymous": false,
     "inputs": [
         {
-            "indexed": false,
-            "internalType": "uint256",
-            "name": "id",
-            "type": "uint256"
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "id",
+        "type": "uint256"
         },
         {
-            "indexed": false,
-            "internalType": "address",
-            "name": "winner",
-            "type": "address"
+        "indexed": false,
+        "internalType": "address",
+        "name": "winner",
+        "type": "address"
         },
         {
-            "indexed": false,
-            "internalType": "uint256",
-            "name": "prize",
-            "type": "uint256"
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "prize",
+        "type": "uint256"
         },
         {
-            "indexed": false,
-            "internalType": "bool",
-            "name": "jack",
-            "type": "bool"
+        "indexed": false,
+        "internalType": "bool",
+        "name": "jack",
+        "type": "bool"
         }
     ],
     "name": "RoundSettled",
@@ -279,10 +279,10 @@
     "anonymous": false,
     "inputs": [
         {
-            "indexed": false,
-            "internalType": "uint256",
-            "name": "id",
-            "type": "uint256"
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "id",
+        "type": "uint256"
         }
     ],
     "name": "RoundWaiting",
@@ -292,10 +292,10 @@
     "anonymous": false,
     "inputs": [
         {
-            "indexed": false,
-            "internalType": "address",
-            "name": "account",
-            "type": "address"
+        "indexed": false,
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
         }
     ],
     "name": "Unpaused",
@@ -306,9 +306,9 @@
     "name": "MAX_CFG",
     "outputs": [
         {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
         }
     ],
     "stateMutability": "view",
@@ -331,9 +331,9 @@
     {
     "inputs": [
         {
-            "internalType": "address payable",
-            "name": "to",
-            "type": "address"
+        "internalType": "address payable",
+        "name": "to",
+        "type": "address"
         }
     ],
     "name": "claim",
@@ -344,9 +344,9 @@
     {
     "inputs": [
         {
-            "internalType": "address payable",
-            "name": "to",
-            "type": "address"
+        "internalType": "address payable",
+        "name": "to",
+        "type": "address"
         }
     ],
     "name": "claimRefund",
@@ -357,17 +357,17 @@
     {
     "inputs": [
         {
-            "internalType": "address",
-            "name": "",
-            "type": "address"
+        "internalType": "address",
+        "name": "",
+        "type": "address"
         }
     ],
     "name": "credit",
     "outputs": [
         {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
         }
     ],
     "stateMutability": "view",
@@ -378,59 +378,59 @@
     "name": "cur",
     "outputs": [
         {
-            "internalType": "uint128",
-            "name": "totalBet",
-            "type": "uint128"
+        "internalType": "uint128",
+        "name": "totalBet",
+        "type": "uint128"
         },
         {
-            "internalType": "uint64",
-            "name": "startTs",
-            "type": "uint64"
+        "internalType": "uint64",
+        "name": "startTs",
+        "type": "uint64"
         },
         {
-            "internalType": "uint64",
-            "name": "endTs",
-            "type": "uint64"
+        "internalType": "uint64",
+        "name": "endTs",
+        "type": "uint64"
         },
         {
-            "internalType": "uint64",
-            "name": "lockTs",
-            "type": "uint64"
+        "internalType": "uint64",
+        "name": "lockTs",
+        "type": "uint64"
         },
         {
-            "internalType": "uint32",
-            "name": "uniqPlayers",
-            "type": "uint32"
+        "internalType": "uint32",
+        "name": "uniqPlayers",
+        "type": "uint32"
         },
         {
-            "internalType": "uint32",
-            "name": "ticketCount",
-            "type": "uint32"
+        "internalType": "uint32",
+        "name": "ticketCount",
+        "type": "uint32"
         },
         {
-            "internalType": "uint256",
-            "name": "vrfReqId",
-            "type": "uint256"
+        "internalType": "uint256",
+        "name": "vrfReqId",
+        "type": "uint256"
         },
         {
-            "internalType": "uint256",
-            "name": "random",
-            "type": "uint256"
+        "internalType": "uint256",
+        "name": "random",
+        "type": "uint256"
         },
         {
-            "internalType": "enum MonadLotteryV2Binary.Phase",
-            "name": "phase",
-            "type": "uint8"
+        "internalType": "enum MonadLotteryV2Binary.Phase",
+        "name": "phase",
+        "type": "uint8"
         },
         {
-            "internalType": "bool",
-            "name": "isJackpot",
-            "type": "bool"
+        "internalType": "bool",
+        "name": "isJackpot",
+        "type": "bool"
         },
         {
-            "internalType": "address",
-            "name": "winner",
-            "type": "address"
+        "internalType": "address",
+        "name": "winner",
+        "type": "address"
         }
     ],
     "stateMutability": "view",
@@ -441,9 +441,9 @@
     "name": "currentRoundId",
     "outputs": [
         {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
         }
     ],
     "stateMutability": "view",
@@ -454,9 +454,9 @@
     "name": "duration",
     "outputs": [
         {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
         }
     ],
     "stateMutability": "view",
@@ -467,9 +467,9 @@
     "name": "edgeBps",
     "outputs": [
         {
-            "internalType": "uint16",
-            "name": "",
-            "type": "uint16"
+        "internalType": "uint16",
+        "name": "",
+        "type": "uint16"
         }
     ],
     "stateMutability": "view",
@@ -480,9 +480,9 @@
     "name": "edgePool",
     "outputs": [
         {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
         }
     ],
     "stateMutability": "view",
@@ -524,9 +524,9 @@
     "name": "gamesSinceJack",
     "outputs": [
         {
-            "internalType": "uint16",
-            "name": "",
-            "type": "uint16"
+        "internalType": "uint16",
+        "name": "",
+        "type": "uint16"
         }
     ],
     "stateMutability": "view",
@@ -537,9 +537,9 @@
     "name": "graceTime",
     "outputs": [
         {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
         }
     ],
     "stateMutability": "view",
@@ -550,9 +550,9 @@
     "name": "idleLimit",
     "outputs": [
         {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
         }
     ],
     "stateMutability": "view",
@@ -561,17 +561,17 @@
     {
     "inputs": [
         {
-            "internalType": "address",
-            "name": "",
-            "type": "address"
+        "internalType": "address",
+        "name": "",
+        "type": "address"
         }
     ],
     "name": "lastBlockBet",
     "outputs": [
         {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
         }
     ],
     "stateMutability": "view",
@@ -589,9 +589,9 @@
     "name": "maxBet",
     "outputs": [
         {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
         }
     ],
     "stateMutability": "view",
@@ -602,9 +602,9 @@
     "name": "maxTix",
     "outputs": [
         {
-            "internalType": "uint16",
-            "name": "",
-            "type": "uint16"
+        "internalType": "uint16",
+        "name": "",
+        "type": "uint16"
         }
     ],
     "stateMutability": "view",
@@ -615,9 +615,9 @@
     "name": "minBet",
     "outputs": [
         {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
         }
     ],
     "stateMutability": "view",
@@ -628,9 +628,9 @@
     "name": "owner",
     "outputs": [
         {
-            "internalType": "address",
-            "name": "",
-            "type": "address"
+        "internalType": "address",
+        "name": "",
+        "type": "address"
         }
     ],
     "stateMutability": "view",
@@ -648,9 +648,9 @@
     "name": "paused",
     "outputs": [
         {
-            "internalType": "bool",
-            "name": "",
-            "type": "bool"
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
         }
     ],
     "stateMutability": "view",
@@ -659,17 +659,17 @@
     {
     "inputs": [
         {
-            "internalType": "address",
-            "name": "",
-            "type": "address"
+        "internalType": "address",
+        "name": "",
+        "type": "address"
         }
     ],
     "name": "pendingRefund",
     "outputs": [
         {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
         }
     ],
     "stateMutability": "view",
@@ -680,9 +680,9 @@
     "name": "playersInCurrentRound",
     "outputs": [
         {
-            "internalType": "address[]",
-            "name": "",
-            "type": "address[]"
+        "internalType": "address[]",
+        "name": "",
+        "type": "address[]"
         }
     ],
     "stateMutability": "view",
@@ -698,17 +698,17 @@
     {
     "inputs": [
         {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
         }
     ],
     "name": "requestPending",
     "outputs": [
         {
-            "internalType": "bool",
-            "name": "",
-            "type": "bool"
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
         }
     ],
     "stateMutability": "view",
@@ -717,17 +717,17 @@
     {
     "inputs": [
         {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
         }
     ],
     "name": "requestedHash",
     "outputs": [
         {
-            "internalType": "bytes32",
-            "name": "",
-            "type": "bytes32"
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
         }
     ],
     "stateMutability": "view",
@@ -738,9 +738,9 @@
     "name": "roundController",
     "outputs": [
         {
-            "internalType": "address",
-            "name": "",
-            "type": "address"
+        "internalType": "address",
+        "name": "",
+        "type": "address"
         }
     ],
     "stateMutability": "view",
@@ -749,44 +749,44 @@
     {
     "inputs": [
         {
-            "internalType": "uint256",
-            "name": "a",
-            "type": "uint256"
+        "internalType": "uint256",
+        "name": "a",
+        "type": "uint256"
         },
         {
-            "internalType": "uint256",
-            "name": "b",
-            "type": "uint256"
+        "internalType": "uint256",
+        "name": "b",
+        "type": "uint256"
         },
         {
-            "internalType": "uint256",
-            "name": "c",
-            "type": "uint256"
+        "internalType": "uint256",
+        "name": "c",
+        "type": "uint256"
         },
         {
-            "internalType": "uint16",
-            "name": "d",
-            "type": "uint16"
+        "internalType": "uint16",
+        "name": "d",
+        "type": "uint16"
         },
         {
-            "internalType": "uint16",
-            "name": "e",
-            "type": "uint16"
+        "internalType": "uint16",
+        "name": "e",
+        "type": "uint16"
         },
         {
-            "internalType": "uint256",
-            "name": "f",
-            "type": "uint256"
+        "internalType": "uint256",
+        "name": "f",
+        "type": "uint256"
         },
         {
-            "internalType": "uint256",
-            "name": "g",
-            "type": "uint256"
+        "internalType": "uint256",
+        "name": "g",
+        "type": "uint256"
         },
         {
-            "internalType": "uint256",
-            "name": "h",
-            "type": "uint256"
+        "internalType": "uint256",
+        "name": "h",
+        "type": "uint256"
         }
     ],
     "name": "setParams",
@@ -797,9 +797,9 @@
     {
     "inputs": [
         {
-            "internalType": "address",
-            "name": "c",
-            "type": "address"
+        "internalType": "address",
+        "name": "c",
+        "type": "address"
         }
     ],
     "name": "setRoundController",
@@ -817,17 +817,17 @@
     {
     "inputs": [
         {
-            "internalType": "address",
-            "name": "player",
-            "type": "address"
+        "internalType": "address",
+        "name": "player",
+        "type": "address"
         }
     ],
     "name": "stakeOf",
     "outputs": [
         {
-            "internalType": "uint128",
-            "name": "",
-            "type": "uint128"
+        "internalType": "uint128",
+        "name": "",
+        "type": "uint128"
         }
     ],
     "stateMutability": "view",
@@ -838,9 +838,9 @@
     "name": "step",
     "outputs": [
         {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
         }
     ],
     "stateMutability": "view",
@@ -851,9 +851,9 @@
     "name": "targetJack",
     "outputs": [
         {
-            "internalType": "uint16",
-            "name": "",
-            "type": "uint16"
+        "internalType": "uint16",
+        "name": "",
+        "type": "uint16"
         }
     ],
     "stateMutability": "view",
@@ -864,9 +864,9 @@
     "name": "ticketCount",
     "outputs": [
         {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
         }
     ],
     "stateMutability": "view",
@@ -875,9 +875,9 @@
     {
     "inputs": [
         {
-            "internalType": "address",
-            "name": "newOwner",
-            "type": "address"
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
         }
     ],
     "name": "transferOwnership",
@@ -895,14 +895,14 @@
     {
     "inputs": [
         {
-            "internalType": "address payable",
-            "name": "to",
-            "type": "address"
+        "internalType": "address payable",
+        "name": "to",
+        "type": "address"
         },
         {
-            "internalType": "uint256",
-            "name": "amt",
-            "type": "uint256"
+        "internalType": "uint256",
+        "name": "amt",
+        "type": "uint256"
         }
     ],
     "name": "withdrawEdge",
@@ -911,7 +911,7 @@
     "type": "function"
     },
     {
-        "stateMutability": "payable",
-        "type": "receive"
+    "stateMutability": "payable",
+    "type": "receive"
     }
 ]
