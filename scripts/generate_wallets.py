@@ -38,6 +38,3 @@ def main():
     print_addrs(keys)
     write_to_file(result_path, keys, "w")
 
-
-if __name__ == "__main__":
-    main()

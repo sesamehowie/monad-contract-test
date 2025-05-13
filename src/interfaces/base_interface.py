@@ -9,7 +9,7 @@ RPS_CA = "0x21730Db7aE00538A2ccfF5AFA602c37db1C0cC2f"
 PLINKO_CA = "0xB320C0Db0e7D2FEEDa4CF09dbd009450561C551E"
 ROULETTE_CA = "0x32aBcb3ec874c934Bfb81fC66bC7943bf3DAcDE7"
 CHEST_CA = "0x801Bab7088890Ec76Db4841822D9ABc427A6AA8D"
-LOTTERY_CA = "0x2B7fCbDaAdAe1fe9BBe6a43979E692455DD05abf"
+LOTTERY_CA = "0x992596F29e89E376E0B8DA5b3bcF12727A4CB736"
 
 
 CONTRACT_CONFIG = {
@@ -39,7 +39,12 @@ class BaseInterface:
         return json.load(open(abi_path))
 
     def execute_write_function(
-        self, function_name: str, client: EthClient, args: list, value: int = 0
+        self,
+        function_name: str,
+        client: EthClient,
+        args: list,
+        value: int = 0,
+        estimate_gas: bool = False,
     ) -> bool:
         try:
             contract = client.get_contract(
@@ -58,9 +63,15 @@ class BaseInterface:
                 "nonce": client.get_nonce(),
                 "chainId": client.network.chain_id,
                 "gasPrice": client.w3.eth.gas_price,
-                "gas": 350000,
                 "data": data,
             }
+
+            if estimate_gas:
+                gas = client.w3.eth.estimate_gas(tx_params)
+            else:
+                gas = 500000
+
+            tx_params["gas"] = gas
 
             return client.sign_and_send_tx(tx_dict=tx_params)
 

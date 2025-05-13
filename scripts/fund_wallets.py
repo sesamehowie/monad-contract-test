@@ -3,8 +3,8 @@ from web3 import Web3
 from eth_account import Account
 
 ADMIN_PKEY = ""
-ADMIN_ACCOUNT = Account.from_key(ADMIN_PKEY)
-ADMIN_ADDRESS = ADMIN_ACCOUNT.address
+ADMIN_ACCOUNT = ""
+ADMIN_ADDRESS = ""
 
 web3 = Web3(Web3.HTTPProvider("https://testnet-rpc.monad.xyz"))
 
@@ -55,7 +55,3 @@ def main():
         time.sleep(7)
 
     return True
-
-
-if __name__ == "__main__":
-    main()
