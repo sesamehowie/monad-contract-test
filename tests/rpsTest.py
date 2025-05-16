@@ -7,9 +7,9 @@ def test_rps(client):
 
     try:
         interface.execute_write_function(
-            function_name="setMaxBet",
+            function_name="withdrawBankroll",
             client=client,
-            args=[int(100 * 10**18)],
+            args=[int(1200 * 10**18)],
         )
     except Exception as e:
         print(f"Error: {str(e)}")
