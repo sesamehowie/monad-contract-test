@@ -7,9 +7,9 @@ def test_plinko(client):
 
     try:
         interface.execute_write_function(
-            function_name="setBetLimits",
+            function_name="withdraw",
             client=client,
-            args=[int(0.5 * 10**18), int(15 * 10**18)],
+            args=[int(1350 * 10**18)],
         )
     except Exception as e:
         print(f"Error: {str(e)}")
