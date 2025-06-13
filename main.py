@@ -4,6 +4,7 @@ from tests.rouletteTest import test_roulette
 from tests.chestTest import test_chest
 from tests.potTest import test_lottery, spam_test
 from tests.plinkoTest import test_plinko
+from tests.newRpsTest import test_new_rps, fund_contract
 from src.client.eth_client import EthClient
 from dotenv import load_dotenv
 from src.network.network import Monad
@@ -15,6 +16,7 @@ ADMIN_PKEY = os.environ.get("ADMIN_PKEY")
 PLAYER1 = os.environ.get("PLAYER1")
 PLAYER2 = os.environ.get("PLAYER2")
 LOTTERY_PKEY = os.environ.get("LOTTERY_PKEY")
+RPS_PLAYER = os.environ.get("RPS_PLAYER")
 
 player_client_items = [
     (f"player {i}", player_key)
@@ -34,9 +36,11 @@ def main():
     client = EthClient(
         account_name="admin wallet", private_key=ADMIN_PKEY, network=Monad
     )
+    rps_client = EthClient("rps player", RPS_PLAYER, Monad)
+
     choice = int(
         input(
-            "1. Test RPS\n2. Test Roulette\n3. Test Chest\n4. Test Lottery\n5. MonRoll AutoTest\n6. Test Plinko\n"
+            "1. Test RPS\n2. Test Roulette\n3. Test Chest\n4. Test Lottery\n5. MonRoll AutoTest\n6. Test Plinko\n7. Test new RPS\n"
         )
     )
 
@@ -56,6 +60,8 @@ def main():
             spam_test(player_clients, client)
         case 6:
             return test_plinko(client)
+        case 7:
+            return test_new_rps(rps_client)
         case _:
             return
 
