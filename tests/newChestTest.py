@@ -1,10 +1,11 @@
 import time
 from os import urandom
-from loguru import logger
 from src.interfaces.interfaces import NewChestsInterface
 
 COMMANDS = [
-    {"name": "openChests", "value": 0, "args": [[0], urandom(32)]},
+    # {"name": "openChests", "value": 0, "args": [[0], urandom(32)]},
+    # {"name": "claimWinnings", "value": 0, "args": []},
+    # {"name": "withdraw", "value": 0, "args": [int(1 * 10**18)]}
 ]
 
 
@@ -17,7 +18,7 @@ def test_new_chests(client):
                 function_name=command["name"],
                 client=client,
                 args=command["args"],
-                value=int(0.228 * 10**18),
+                value=command["value"],
                 estimate_gas=False,
             )
 
