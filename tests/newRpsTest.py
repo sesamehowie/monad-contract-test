@@ -4,16 +4,16 @@ from loguru import logger
 from src.interfaces.interfaces import NewRpsInterface
 
 COMMANDS = [
-    # {"name": "setMinBet", "value": 0, "args": [int(0.099 * 10**18)]},
-    # {"name": "setMaxBet", "value": 0, "args": [int(50.001 * 10**18)]},
-    {"name": "claimWinnings", "value": 0, "args": []},
-    {"name": "play", "value": int(0.127 * 10**18), "args": [0, urandom(32)]},
-    {"name": "claimWinnings", "value": 0, "args": []},
-    {"name": "play", "value": int(0.127 * 10**18), "args": [1, urandom(32)]},
-    {"name": "claimWinnings", "value": 0, "args": []},
-    {"name": "play", "value": int(0.127 * 10**18), "args": [2, urandom(32)]},
-    {"name": "claimWinnings", "value": 0, "args": []},
-    # {"name": "withdrawBankroll", "value": 0, "args": [int(1 * 10**18)]},
+    # {"name": "setMinBet", "value": 0, "args": [int(0.1 * 10**18)]},
+    # {"name": "setMaxBet", "value": 0, "args": [int(50 * 10**18)]},
+    # {"name": "claimWinnings", "value": 0, "args": []},
+    # {"name": "play", "value": int(0.127 * 10**18), "args": [0, urandom(32)]},
+    # {"name": "claimWinnings", "value": 0, "args": []},
+    # {"name": "play", "value": int(0.127 * 10**18), "args": [1, urandom(32)]},
+    # {"name": "claimWinnings", "value": 0, "args": []},
+    # {"name": "play", "value": int(0.127 * 10**18), "args": [2, urandom(32)]},
+    # {"name": "claimWinnings", "value": 0, "args": []},
+    {"name": "withdrawBankroll", "value": 0, "args": [int(1 * 10**18)]},
 ]
 
 

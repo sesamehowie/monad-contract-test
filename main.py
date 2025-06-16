@@ -61,9 +61,9 @@ def main():
         case 6:
             return test_plinko(client)
         case 7:
-            return test_new_rps(rps_client)
+            return test_new_rps(client)
         case _:
-            return
+            return fund_contract(client, 500)
 
 
 if __name__ == "__main__":
