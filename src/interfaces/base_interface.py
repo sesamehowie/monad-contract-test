@@ -2,6 +2,7 @@ import os
 import json
 from pathlib import Path
 from loguru import logger
+import traceback
 from ..client.eth_client import EthClient
 
 
@@ -11,6 +12,7 @@ ROULETTE_CA = "0x32aBcb3ec874c934Bfb81fC66bC7943bf3DAcDE7"
 CHEST_CA = "0x801Bab7088890Ec76Db4841822D9ABc427A6AA8D"
 LOTTERY_CA = "0x992596F29e89E376E0B8DA5b3bcF12727A4CB736"
 NEW_RPS_CA = "0x77371f7452AFF5FcaA3A3B59A11794dB19Af5981"
+NEW_CHESTS_CA = "0x101711403B2E45B0a53512E43e3232C4d5A78cA5"
 
 
 CONTRACT_CONFIG = {
@@ -20,6 +22,7 @@ CONTRACT_CONFIG = {
     "Chests": CHEST_CA,
     "Lottery": LOTTERY_CA,
     "New_RPS": NEW_RPS_CA,
+    "New_Chests": NEW_CHESTS_CA,
 }
 
 
@@ -47,6 +50,7 @@ class BaseInterface:
         args: list,
         value: int = 0,
         estimate_gas: bool = False,
+        build_transaction: bool = False,
     ) -> bool:
         try:
             contract = client.get_contract(
@@ -56,17 +60,38 @@ class BaseInterface:
             logger.info(
                 f"Contract {self.contract_name} | Executing write function {function_name} with args: {args}"
             )
-            data = contract.encodeABI(fn_name=function_name, args=args)
+            if build_transaction:
+                func = contract.get_function_by_name(function_name)
+                if args:
+                    tx_params = func(*args).build_transaction(
+                        {
+                            "from": client.address,
+                            "nonce": client.get_nonce(),
+                            "chainId": client.network.chain_id,
+                            "gasPrice": int(client.w3.to_wei(51, "gwei")),
+                        }
+                    )
+                else:
+                    tx_params = func().build_transaction(
+                        {
+                            "from": client.address,
+                            "nonce": client.get_nonce(),
+                            "chainId": client.network.chain_id,
+                            "gasPrice": int(client.w3.to_wei(51, "gwei")),
+                        }
+                    )
+            else:
+                data = contract.encodeABI(fn_name=function_name, args=args)
 
-            tx_params = {
-                "from": client.address,
-                "to": self.contract_address,
-                "value": value,
-                "nonce": client.get_nonce(),
-                "chainId": client.network.chain_id,
-                "gasPrice": client.w3.eth.gas_price,
-                "data": data,
-            }
+                tx_params = {
+                    "from": client.address,
+                    "to": self.contract_address,
+                    "value": value,
+                    "nonce": client.get_nonce(),
+                    "chainId": client.network.chain_id,
+                    "gasPrice": int(client.w3.to_wei(51, "gwei")),
+                    "data": data,
+                }
 
             if estimate_gas:
                 gas = client.w3.eth.estimate_gas(tx_params)
@@ -77,8 +102,8 @@ class BaseInterface:
 
             return client.sign_and_send_tx(tx_dict=tx_params)
 
-        except Exception as e:
-            logger.error(f"Error: {str(e)}")
+        except Exception:
+            logger.error(f"Error: {traceback.format_exc()}")
             return False
 
     def execute_read_function(self, function_name: str, client: EthClient, args: list):

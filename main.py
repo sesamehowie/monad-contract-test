@@ -5,6 +5,7 @@ from tests.chestTest import test_chest
 from tests.potTest import test_lottery, spam_test
 from tests.plinkoTest import test_plinko
 from tests.newRpsTest import test_new_rps, fund_contract
+from tests.newChestTest import test_new_chests
 from src.client.eth_client import EthClient
 from dotenv import load_dotenv
 from src.network.network import Monad
@@ -40,7 +41,7 @@ def main():
 
     choice = int(
         input(
-            "1. Test RPS\n2. Test Roulette\n3. Test Chest\n4. Test Lottery\n5. MonRoll AutoTest\n6. Test Plinko\n7. Test new RPS\n"
+            "1. Test RPS\n2. Test Roulette\n3. Test Chest\n4. Test Lottery\n5. MonRoll AutoTest\n6. Test Plinko\n7. Test new RPS\n8. Test new Chests\n"
         )
     )
 
@@ -62,8 +63,10 @@ def main():
             return test_plinko(client)
         case 7:
             return test_new_rps(client)
+        case 8:
+            return test_new_chests(client)
         case _:
-            return fund_contract(client, 500)
+            return
 
 
 if __name__ == "__main__":
