@@ -2,6 +2,6 @@
 /__pycache__
 .venv
 .env
-/scripts/results
-/scripts/generate_wallets.py
-/scripts/results/generated_keys.txt
+scripts/results
+scripts/generate_wallets.py
+scripts/results/generated_keys.txt
