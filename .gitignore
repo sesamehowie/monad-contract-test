@@ -3,3 +3,5 @@
 .venv
 .env
 /scripts/results
+/scripts/generate_wallets.py
+/scripts/results/generated_keys.txt

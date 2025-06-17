@@ -3,8 +3,12 @@ from os import urandom
 from src.interfaces.interfaces import NewChestsInterface
 
 COMMANDS = [
-    # {"name": "openChests", "value": 0, "args": [[0], urandom(32)]},
-    # {"name": "claimWinnings", "value": 0, "args": []},
+    # {
+    #     "name": "openChests",
+    #     "value": int(0.628 * 10**18),
+    #     "args": [[0, 0, 0], urandom(32)],
+    # },
+    {"name": "claimWinnings", "value": 0, "args": []},
     # {"name": "withdraw", "value": 0, "args": [int(1 * 10**18)]}
 ]
 

@@ -10,10 +10,14 @@ def test_lottery(clients):
     BETS
     """
 
-    resA = LotteryInterface.execute_write_function("bet", clientA, [], int(5 * 10**16))
+    resA = LotteryInterface.execute_write_function(
+        "bet", clientA, [], int(5 * 10**16)
+    )
     assert resA
     time.sleep(2)
-    resB = LotteryInterface.execute_write_function("bet", clientB, [], int(5 * 10**16))
+    resB = LotteryInterface.execute_write_function(
+        "bet", clientB, [], int(5 * 10**16)
+    )
     assert resB
     time.sleep(2)
 
@@ -197,7 +201,10 @@ def spam_test(clients, admin_client):
                                 break
 
                 LotteryInterface.execute_write_function(
-                    "bet", client, [], int(round(random.uniform(0.05, 0.1), 4) * 10**18)
+                    "bet",
+                    client,
+                    [],
+                    int(round(random.uniform(0.05, 0.1), 4) * 10**18),
                 )
                 time.sleep(5)
                 seconds_elapsed += 5

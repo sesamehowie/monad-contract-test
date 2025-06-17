@@ -1,6 +1,7 @@
 import time
 from src.interfaces.interfaces import ChestsInterface
 
+
 def test_chest(client):
     interface = ChestsInterface
 
