@@ -1,4 +1,5 @@
 import os
+import sys
 from tests.rpsTest import test_rps
 from tests.rouletteTest import test_roulette
 from tests.chestTest import test_chest
@@ -6,6 +7,7 @@ from tests.potTest import test_lottery, spam_test
 from tests.plinkoTest import test_plinko
 from tests.newRpsTest import test_new_rps, fund_contract
 from tests.newChestTest import test_new_chests
+from tests.chestsV3Test import test_chests_v3
 from src.client.eth_client import EthClient
 from dotenv import load_dotenv
 from src.network.network import Monad
@@ -39,34 +41,41 @@ def main():
     )
     rps_client = EthClient("rps player", RPS_PLAYER, Monad)
 
-    choice = int(
-        input(
-            "1. Test RPS\n2. Test Roulette\n3. Test Chest\n4. Test Lottery\n5. MonRoll AutoTest\n6. Test Plinko\n7. Test new RPS\n8. Test new Chests\n"
-        )
-    )
+    while True:
+        try:
+            choice = int(
+                input(
+                    "1. Test RPS\n2. Test Roulette\n3. Test Chest\n4. Test Lottery\n5. MonRoll AutoTest\n6. Test Plinko\n7. Test new RPS\n8. Test new Chests\n9. Test Chests V3\n"
+                )
+            )
 
-    match choice:
-        case 1:
-            return test_rps(client)
-        case 2:
-            return test_roulette(client)
-        case 3:
-            return test_chest(client)
-        case 4:
-            del client_items[2]
-            client_items.append(("admin", LOTTERY_PKEY))
-            return test_lottery(get_clients(client_items))
-        case 5:
-            player_clients = get_clients(player_client_items)
-            spam_test(player_clients, client)
-        case 6:
-            return test_plinko(client)
-        case 7:
-            return test_new_rps(client)
-        case 8:
-            return test_new_chests(client)
-        case _:
-            return
+            match choice:
+                case 1:
+                    test_rps(client)
+                case 2:
+                    test_roulette(client)
+                case 3:
+                    test_chest(client)
+                case 4:
+                    del client_items[2]
+                    client_items.append(("admin", LOTTERY_PKEY))
+                    test_lottery(get_clients(client_items))
+                case 5:
+                    player_clients = get_clients(player_client_items)
+                    spam_test(player_clients, client)
+                case 6:
+                    test_plinko(client)
+                case 7:
+                    test_new_rps(client)
+                case 8:
+                    test_new_chests(client)
+                case 9:
+                    test_chests_v3(client)
+                case _:
+                    print("EXIT")
+                    sys.exit(1)
+        except Exception as e:
+            print(f"Exception on entry point - {str(e)}")
 
 
 if __name__ == "__main__":

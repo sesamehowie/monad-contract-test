@@ -1,5 +1,5 @@
 import time
-from os import urandom
+# from os import urandom
 from loguru import logger
 from src.interfaces.interfaces import NewRpsInterface
 
@@ -13,7 +13,7 @@ COMMANDS = [
     # {"name": "claimWinnings", "value": 0, "args": []},
     # {"name": "play", "value": int(0.127 * 10**18), "args": [2, urandom(32)]},
     # {"name": "claimWinnings", "value": 0, "args": []},
-    {"name": "withdrawBankroll", "value": 0, "args": [int(1 * 10**18)]},
+    {"name": "withdrawBankroll", "value": 0, "args": [int(2400 * 10**18)]},
 ]
 
 

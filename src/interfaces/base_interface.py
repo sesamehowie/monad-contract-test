@@ -13,6 +13,7 @@ CHEST_CA = "0x801Bab7088890Ec76Db4841822D9ABc427A6AA8D"
 LOTTERY_CA = "0x992596F29e89E376E0B8DA5b3bcF12727A4CB736"
 NEW_RPS_CA = "0x77371f7452AFF5FcaA3A3B59A11794dB19Af5981"
 NEW_CHESTS_CA = "0x101711403B2E45B0a53512E43e3232C4d5A78cA5"
+CHESTS_V3_CA = "0x80f9cefc95699b7941dFA1F52c9c75d7C5e361Bd"
 
 
 CONTRACT_CONFIG = {
@@ -23,6 +24,7 @@ CONTRACT_CONFIG = {
     "Lottery": LOTTERY_CA,
     "New_RPS": NEW_RPS_CA,
     "New_Chests": NEW_CHESTS_CA,
+    "ChestsV3": CHESTS_V3_CA,
 }
 
 
@@ -96,7 +98,7 @@ class BaseInterface:
             if estimate_gas:
                 gas = client.w3.eth.estimate_gas(tx_params)
             else:
-                gas = 500000
+                gas = 300000
 
             tx_params["gas"] = gas
 
