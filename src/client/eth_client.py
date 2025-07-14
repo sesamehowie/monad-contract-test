@@ -37,12 +37,12 @@ class EthClient:
 
         if signed:
             tx_hash = self.w3.eth.send_raw_transaction(
-                transaction=signed.raw_transaction
+                transaction=signed.rawTransaction
             )
 
             if tx_hash:
                 logger.success(
-                    f"{self.account_name} | Transaction: {self.network.scanner}/tx/0x{tx_hash.hex()}"
+                    f"{self.account_name} | Transaction: {self.network.scanner}/tx/{tx_hash.hex()}"
                 )
 
             return True if tx_hash else False

@@ -5,9 +5,11 @@ from tests.rouletteTest import test_roulette
 from tests.chestTest import test_chest
 from tests.potTest import test_lottery, spam_test
 from tests.plinkoTest import test_plinko
-from tests.newRpsTest import test_new_rps, fund_contract
+from tests.newRpsTest import test_new_rps
 from tests.newChestTest import test_new_chests
 from tests.chestsV3Test import test_chests_v3
+from tests.predictionTest import test_prediction
+from tests.vaultTest import test_vault
 from src.client.eth_client import EthClient
 from dotenv import load_dotenv
 from src.network.network import Monad
@@ -45,7 +47,7 @@ def main():
         try:
             choice = int(
                 input(
-                    "1. Test RPS\n2. Test Roulette\n3. Test Chest\n4. Test Lottery\n5. MonRoll AutoTest\n6. Test Plinko\n7. Test new RPS\n8. Test new Chests\n9. Test Chests V3\n"
+                    "1. Test RPS\n2. Test Roulette\n3. Test Chest\n4. Test Lottery\n5. MonRoll AutoTest\n6. Test Plinko\n7. Test new RPS\n8. Test new Chests\n9. Test Chests V3\n10. Test Prediction\n11. Test Vault\n"
                 )
             )
 
@@ -71,6 +73,10 @@ def main():
                     test_new_chests(client)
                 case 9:
                     test_chests_v3(client)
+                case 10:
+                    test_prediction(client)
+                case 11:
+                    test_vault(client)
                 case _:
                     print("EXIT")
                     sys.exit(1)
