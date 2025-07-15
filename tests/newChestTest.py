@@ -6,14 +6,12 @@ def test_new_chests(client):
     interface = NewChestsInterface
 
     try:
-        # interface.execute_write_function(
-        #     function_name=command["name"],
-        #     client=client,
-        #     value=command["value"],
-        #     estimate_gas=False,
-        # )
-        interface.execute_read_function(
-            "playerWinnings", client, ["0xb66C8E76bF9B434bca77cd1B132A199D351C6bB5"]
+        interface.execute_write_function(
+            function_name="withdraw",
+            client=client,
+            value=0,
+            args=[int(500 * 10**18)],
+            estimate_gas=False,
         )
 
     except Exception as e:

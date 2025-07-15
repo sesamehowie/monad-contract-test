@@ -1,7 +1,7 @@
 import time
 from src.interfaces.interfaces import ChestsV3Interface
 
-COMMANDS = [{"name": "withdraw", "value": 0, "args": [int(1500 * 10**18)]}]
+COMMANDS = [{"name": "withdraw", "value": 0, "args": [int(1000 * 10**18)]}]
 
 
 def test_chests_v3(client):

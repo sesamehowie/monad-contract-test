@@ -10,18 +10,31 @@ from tests.newChestTest import test_new_chests
 from tests.chestsV3Test import test_chests_v3
 from tests.predictionTest import test_prediction
 from tests.vaultTest import test_vault
+from tests.pythTest import test_pyth
 from src.client.eth_client import EthClient
 from dotenv import load_dotenv
 from src.network.network import Monad
-from scripts.fund_wallets import read_txt
 
 load_dotenv()
+
 
 ADMIN_PKEY = os.environ.get("ADMIN_PKEY")
 PLAYER1 = os.environ.get("PLAYER1")
 PLAYER2 = os.environ.get("PLAYER2")
 LOTTERY_PKEY = os.environ.get("LOTTERY_PKEY")
 RPS_PLAYER = os.environ.get("RPS_PLAYER")
+
+
+def read_txt(filename):
+    results = None
+    try:
+        with open(filename, "r") as f:
+            results = f.read().splitlines()
+        return results
+    except Exception as e:
+        print(f"Error opening {filename}: {str(e)}")
+        return []
+
 
 player_client_items = [
     (f"player {i}", player_key)
@@ -47,7 +60,7 @@ def main():
         try:
             choice = int(
                 input(
-                    "1. Test RPS\n2. Test Roulette\n3. Test Chest\n4. Test Lottery\n5. MonRoll AutoTest\n6. Test Plinko\n7. Test new RPS\n8. Test new Chests\n9. Test Chests V3\n10. Test Prediction\n11. Test Vault\n"
+                    "1. Test RPS\n2. Test Roulette\n3. Test Chest\n4. Test Lottery\n5. MonRoll AutoTest\n6. Test Plinko\n7. Test new RPS\n8. Test new Chests\n9. Test Chests V3\n10. Test Prediction\n11. Test Vault\n12. Test Pyth\n"
                 )
             )
 
@@ -77,6 +90,8 @@ def main():
                     test_prediction(client)
                 case 11:
                     test_vault(client)
+                case 12:
+                    test_pyth(client)
                 case _:
                     print("EXIT")
                     sys.exit(1)

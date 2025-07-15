@@ -4,32 +4,7 @@ from pathlib import Path
 from loguru import logger
 import traceback
 from ..client.eth_client import EthClient
-
-
-RPS_CA = "0x21730Db7aE00538A2ccfF5AFA602c37db1C0cC2f"
-PLINKO_CA = "0xB320C0Db0e7D2FEEDa4CF09dbd009450561C551E"
-ROULETTE_CA = "0x32aBcb3ec874c934Bfb81fC66bC7943bf3DAcDE7"
-CHEST_CA = "0x801Bab7088890Ec76Db4841822D9ABc427A6AA8D"
-LOTTERY_CA = "0x992596F29e89E376E0B8DA5b3bcF12727A4CB736"
-NEW_RPS_CA = "0x77371f7452AFF5FcaA3A3B59A11794dB19Af5981"
-NEW_CHESTS_CA = "0x101711403B2E45B0a53512E43e3232C4d5A78cA5"
-CHESTS_V3_CA = "0x80f9cefc95699b7941dFA1F52c9c75d7C5e361Bd"
-VAULT_CA = "0x01e4Fe20Fd7e65865B0aF3b0eDccEF135c3E1F5A"
-PREDICTION_CA = "0x0f68d96d5f684121dB47634B1B21626Fa1733556"
-
-
-CONTRACT_CONFIG = {
-    "RPS": RPS_CA,
-    "Plinko": PLINKO_CA,
-    "Roulette": ROULETTE_CA,
-    "Chests": CHEST_CA,
-    "Lottery": LOTTERY_CA,
-    "New_RPS": NEW_RPS_CA,
-    "New_Chests": NEW_CHESTS_CA,
-    "ChestsV3": CHESTS_V3_CA,
-    "Vault": VAULT_CA,
-    "Prediction": PREDICTION_CA,
-}
+from .config import CONTRACT_CONFIG
 
 
 class BaseInterface:
@@ -102,7 +77,7 @@ class BaseInterface:
             if estimate_gas:
                 gas = client.w3.eth.estimate_gas(tx_params)
             else:
-                gas = 300000
+                gas = 500000
 
             tx_params["gas"] = gas
 

@@ -1,9 +1,9 @@
 import time
 from src.interfaces.interfaces import VaultInterface
-from src.interfaces.base_interface import PREDICTION_CA
+from src.interfaces.config import PREDICTION_FIX_CA
 
 commands = [
-    {"name": "authorizeGame", "value": 0, "args": [PREDICTION_CA]},
+    {"name": "authorizeGame", "value": 0, "args": [PREDICTION_FIX_CA]},
 ]
 
 

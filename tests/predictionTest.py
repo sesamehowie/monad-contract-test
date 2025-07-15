@@ -1,26 +1,39 @@
 import time
 from os import urandom
-from src.interfaces.interfaces import PredictionInterface
+from src.interfaces.interfaces import PredictionFixInterface
 
 OPERATOR_ADDRESS = "0xE45C3674E5672A391dC9367F0e94A3cE1049c177"
 current_epoch = 1
 commands = [
     {
-        "name": "paused",
-        "args": [],
+        "name": "setOperator",
+        "args": ["0x7DE4E5E811E9610027AC1b72538F0a26E1dBE816"],
+        "value": 0,
     },
+    {"name": "setMinBetAmount", "args": [int(0.1 * 10**18)], "value": 0},
+    {"name": "setMaxBetAmount", "args": [int(10 * 10**18)], "value": 0},
+    {"name": "genesisStartRound", "args": [], "value": 0},
+    # {
+    #     "name": "executeRound",
+    #     "value": int(0.2 * 10**18),
+    #     "args": [
+    #         "0x504e41550100000003b801000000040d03408e277ecdffeb8806602d80a1e98736df4a3c4c066c215af9aae85cdbc7a0745443b9e6659409b82d64cd84f71661563f12c976ab1676157be7b1070654edf700044a867239dd2f463869d50d41ffbe1f11f5313d7557f01564aaccf4c97eee7b790c33736ba3ae7315b8dfd6c16d2c90dc535ebaaa42ae0fcf2e8b8e884ef16fc8000603dc3be970d46060d61e0c15d05c0c9b32f95a050e48be3de544ebc2303e18627b8d0707cf369f01ecf2a44d4e63937f16abf3b577c09464ef59b182630ba83c0108dafbb6d983512328de28ea53bf52bdc68ac00674e46724afca87e03bfe463b0a32a069490f94261fd777c9b5b4b4e9b3702a2a66e1ab5d39ea5552526086e1dc000ad30ea5bd74b110fa7a7baee5593e011076a7956c9d1d87b8dd278714c2891a77095e81f96938d4c66cbc60cf931d706d1ae4968dbd92732404213011b027f4db000b970053c4a40be1ee8df5d6e26f541e1931db1f9a8b30c336148dd5f4e8f6c796555a21b945bd9abd4eb184aaad6ba4f26451db8dca0bd5dc709e343154aa910b010c2235d63dd862ce1e8d33af555c4bd413ab88feaff7d5ac99dd7fab99f6fe14c754a8be953c5501cf53ec697d2575d5304fa1cfc49d1333f0e750e055c81a27cf010dba975f4aa63c43ca7c42aad8d56d00f7b7cda5e161db528182e8cceca43d1bc2047c1f6372e7a2587b8991a0e2d18b3244356bcd78086244d36aa52f9afa98ad000e615147a064c730ef80383fd4a6aefb240fdc4665389e94368fee0387ad9b45fb23467903ce464a23dda90d27189f7590a418f3bbe82e5595cacebf56bc258ab9010f67f331b3fc32f4bb3d0c20365491133080b84614c488789532b7ade62d9a4238071cbb37ecd04c985b98c5ac57a4c82300551e2c945acb958c6fb031332e1eea0110a964a2f9c9b21bc6565f1951e74619a5797e029f5edc762916e95e190eb45fd135b0c2814d343a3ca1175658392ad131ab3dc7bbb7dd4c4b7f39d75ea6e8c0450011b2f0f2dafce5c914ff36021328d19bffae255dd8b09a5a4c1fc40fa3e5878f150b2a6cd15bba1f734fb4d30d2ac3281150acf70fd98a95c386fb8da97644adb30012d3c6a2308125221653575f473f330ab301163a3a88dea44f3d87d4061ab6d0c37441e00ff3758b9ce7ab8d6b7cab4c82043393ee06a4e53a8a8992a121d3637c016874f5c300000000001ae101faedac5851e32b9b23b5f9411a8c2bac4aae3ed4dd7b811dd1a72ea4aa710000000008a37742014155575600000000000db105ff00002710f17901055a9cecd0a698846d03bb63db89dabf5001005500e62df6c8b4a85fe1a67db44dc12de5db330f7ac66b72dc658afedf0f4a415b4300000b1286ddce0000000000d8c7d1b3fffffff8000000006874f5c3000000006874f5c300000b12a7924d6000000000fa1c34b40c4a3e6db4ee3f338e16b3db7ec8498254d085afc1aa866cbb064ba0d554a7a72e9ef7f219362f962b97bb9618cf626e8b3ccd30ab54d92633cde951a716deb0e1debe9e7df3e82c707cdecfd56ff0c972d2cebb4f5a0c5a80650546853260f8f6015a74e0cf4cf79a549ad0b97cb164bed6612218964610ffdb65825a88c6b9111addab7439dfa0d209782b1bbfed77026d4b18d5bb414d8b4ec93601acd342099e61fb6624bdec551f276b40fcdf65765879c485e1fed82a940e0773eaf3285b2be2c4c88ae40230834d8bd498e891f3d2faf58266d0dbe30f108acdc4588528620c4dad01638449344e394e7c8d3818"
+    #     ],
+    # },
 ]
 
 
 def test_prediction(client):
-    interface = PredictionInterface
+    interface = PredictionFixInterface
     for command in commands:
         try:
 
-            interface.execute_read_function(
+            interface.execute_write_function(
                 function_name=command["name"],
                 client=client,
                 args=command["args"],
+                value=command["value"],
+                estimate_gas=False,
             )
 
         except Exception as e:
