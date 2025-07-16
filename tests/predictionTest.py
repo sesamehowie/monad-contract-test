@@ -27,7 +27,6 @@ def test_prediction(client):
     interface = PredictionFixInterface
     for command in commands:
         try:
-
             interface.execute_write_function(
                 function_name=command["name"],
                 client=client,

@@ -37,7 +37,7 @@ class EthClient:
 
         if signed:
             tx_hash = self.w3.eth.send_raw_transaction(
-                transaction=signed.rawTransaction
+                transaction=signed.raw_transaction
             )
 
             if tx_hash:
