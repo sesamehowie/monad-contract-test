@@ -55,7 +55,9 @@ def main():
             else:
                 task = ALL_TASKS[choice - 1]
                 print("Selected task", task.name)
-                task.task(client if task.name != "MonRoll" else client_items)
+                task.task(
+                    get_clients(client_items) if task.name == "MonRoll" else client
+                )
 
         except Exception as e:
             print(f"Exception on entry point - {str(e)}")

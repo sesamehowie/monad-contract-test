@@ -42,7 +42,7 @@ class EthClient:
 
             if tx_hash:
                 logger.success(
-                    f"{self.account_name} | Transaction: {self.network.scanner}/tx/{tx_hash.hex()}"
+                    f"{self.account_name} | Transaction: {self.network.scanner}/tx/0x{tx_hash.hex()}"
                 )
 
             return True if tx_hash else False
