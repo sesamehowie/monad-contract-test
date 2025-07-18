@@ -11,9 +11,14 @@ def test_prediction_final(client):
 
     commands = [
         {
-            "name": "claimAllRewards",
-            "args": [],
-            "value": 0,
+            "name": "cancelRound",
+            "args": [
+                2,
+                [
+                    "0x504e41550100000003b801000000040d0122a4fd33558a1308d357b64624dd09d3f2781e9ee07033617aa29ba5d80bff4e4a8d9e39320b3e10d3dcfcc4149eeaaa9508be148229983f47f11758327be55c0003ee56453fc6be0f4bcd6e8f8ff3bf3bc8c56cccd03116aafdd1bc1d179ca4bbb110e99e0b4c75e3b787809390266313e28c557043e37f55c66e882ab8d8bdf3cf0104aaad24ee13f54646cec8dd7f92c00b4c6f7502fcaa4206a6d2a8a9248cafcc40714f48f6c9050db2ac191e14eda1086c7630b3994426385cc135e97a76ca66c90106f35ca18e40229bb7d2367a16bdc72b4e400e801905729554bc8985d2c28ca2961c67eced3537905c69c85d9968c06102d9b0cb005d2ed683650e0f5669a04d820008a50c86198dffcb5b13840cce0b623f5437fa2a6970fb1a1cae57b788d9842fdb780a5fae4468a4eb54d597ac3ffbaf6ad3f40395ef0805c13b9ce39e0e2e727c010b9ddda876311ec54b45207f69517efa20c351ad59b3975965c2819dba69c9b4ab744d51abc4275b86a7aba81a38675cdf6abcacacff57cda70ed7626e49691e48000c201f94c7e0fb983cb04236661e7a51cd92f707dc425d7eba5705c80e6caad73b384f2b95817107421e5f656d3f26416fc21953fea9b1f92bfa5700ab52addf8d000d2c8621402fa320a4485ea83c7a659fa0e8bd313d9d4746883615cc7596d0579b0f1064822ce48abcdbc11c340ca22331e83078e57d41717101b7b5b0e49b1af5010ec07b72c25324bdf92dbce2e96e37efb85d7e4c33813c1e9f68e067deca61d0ed044cf1b74bc81d2f237d51c8135cf2a8a169eef8f7ee81933329068bcd83379a010fff9210e8a62bb90dbe297aa65cc75d82898747a6c7169f52df0c699640abca6b71c6c4d4bd13290207e3e759ad34923fd08e3a4fae1f2fa449ae0865630e14e50010dabe9c291323553d07fa2abc2a894dc58972e8f32aaad7d70615ca2985540e826a01c9c3213880f4d1001500e6a93fcb967a3cf7c174a923d3f187efc38614780011110787f298f8bc4cc3fe5ef453a6b9b628b365c6a96b3f96871c46f4d6f6246772df3ad888431dff8b007bbaae1730068401b8ea7f6ef8077e818f2cde3c79ed00122f3071829c0d1d088723b1740170f99db875039ce26d43375931b8c27530808a6a253723193b2f0e106d496ef9c9e38c6bc991b546a6b0da4840ca86c606a00400687a22b000000000001ae101faedac5851e32b9b23b5f9411a8c2bac4aae3ed4dd7b811dd1a72ea4aa710000000008b00cac014155575600000000000dbd9c1b000027107cdc04f8fec5364e89c46764d15363d32827640d01005500e62df6c8b4a85fe1a67db44dc12de5db330f7ac66b72dc658afedf0f4a415b4300000ad0372231cf00000000ef860171fffffff800000000687a22b000000000687a22b000000ad111254da000000000fabf04000cfd26286da077b69b4df2fc52b574676f4900e286b75eca0a371007e1d9ce94fc80c700f42ca5b0b25638f67525b26fbcb5eca9a0e76fc0220fad3feb3cda816ddca10fdc117a07a4e8ee66b9517d9f1ba0aecb768a41c615c0bce0609dea6f1679c6c01a36b25984c75d3f1fd36ecefe0e9c441bc8ea3b31fe1e228d2d6273d9df75ee1ff2c5353e3ea0f170f8db055ec18c62d5d482e4545aba8a89d8988eb9a8ab3f2cb957d82ae6f9522342312aa2e2f72eb13cbc360904928715fdfb8d0f3ae592758354f5dec07cda1b1c460ed91f8fe67f8ee2b7e46f9ba22500e3b2fa0a2e0fb77d3988486d6f927c9f796787"
+                ],
+            ],
+            "value": 1,
         },
         # {
         #     "name": "betPump",
@@ -62,24 +67,24 @@ def test_prediction_final(client):
     ]
 
     read_commands = [
-        {"name": "currentRoundId", "args": []},
+        {"name": "rounds", "args": [4]},
         #     {"name": "getUserRounds", "args": [client.address]},
         #     {"name": "userBetsInRound", "args": [3]},
-        {"name": "getUserClaimableAmount", "args": [client.address]},
+        # {"name": "getUserClaimableAmount", "args": [client.address]},
     ]
 
-    for command in commands:
-        try:
-            interface.execute_write_function(
-                function_name=command["name"],
-                client=client,
-                args=command["args"],
-                value=command["value"],
-                estimate_gas=False,
-            )
-        except Exception as e:
-            print(f"Error: {str(e)}")
-        time.sleep(10)
+    # for command in commands:
+    #     try:
+    #         interface.execute_write_function(
+    #             function_name=command["name"],
+    #             client=client,
+    #             args=command["args"],
+    #             value=command["value"],
+    #             estimate_gas=False,
+    #         )
+    #     except Exception as e:
+    #         print(f"Error: {str(e)}")
+    #     time.sleep(10)
 
     for command in read_commands:
         try:
