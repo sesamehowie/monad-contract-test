@@ -362,32 +362,6 @@
     },
     {
     "inputs": [],
-    "name": "BET_DURATION",
-    "outputs": [
-        {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-        }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-    },
-    {
-    "inputs": [],
-    "name": "LOCK_DURATION",
-    "outputs": [
-        {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-        }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-    },
-    {
-    "inputs": [],
     "name": "MAX_BUFFER_SECONDS",
     "outputs": [
         {
@@ -427,7 +401,7 @@
     },
     {
     "inputs": [],
-    "name": "SETTLE_DURATION",
+    "name": "ROUND_STAGE_DURATION",
     "outputs": [
         {
         "internalType": "uint256",
@@ -498,9 +472,9 @@
         "type": "uint256"
         },
         {
-            "internalType": "bytes[]",
-            "name": "pythPriceUpdate",
-            "type": "bytes[]"
+        "internalType": "bytes[]",
+        "name": "pythPriceUpdate",
+        "type": "bytes[]"
         }
     ],
     "name": "cancelRound",
