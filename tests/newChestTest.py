@@ -1,5 +1,4 @@
 import time
-from os import urandom
 from src.interfaces.interfaces import NewChestsInterface
 
 def test_new_chests(client):

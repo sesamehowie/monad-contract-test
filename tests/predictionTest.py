@@ -1,5 +1,4 @@
 import time
-from os import urandom
 from src.interfaces.interfaces import PredictionFixInterface
 
 OPERATOR_ADDRESS = "0xE45C3674E5672A391dC9367F0e94A3cE1049c177"

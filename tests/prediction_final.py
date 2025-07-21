@@ -1,7 +1,5 @@
 import time
 from src.interfaces.interfaces import FinalPredictionInterface
-import random
-
 
 OPERATOR_ADDRESS = "0xE45C3674E5672A391dC9367F0e94A3cE1049c177"
 current_epoch = 1
@@ -10,14 +8,14 @@ current_epoch = 1
 def test_prediction_final(client):
     interface = FinalPredictionInterface
 
-    commands = [
-        {
-            "name": random.choice(["betPump", "betDump"]),
-            "args": [],
-            "value": int(0.15 * 10**18),
-        }
-        for _ in range(2)
-    ]
+    # commands = [
+    #     {
+    #         "name": random.choice(["betPump", "betDump"]),
+    #         "args": [],
+    #         "value": int(0.15 * 10**18),
+    #     }
+    #     for _ in range(2)
+    # ]
 
     read_commands = [
         {"name": "currentRoundId", "args": []},
