@@ -1,7 +1,7 @@
 from src.interfaces.interfaces import NewRpsInterface
 
 COMMANDS = [
-    {"name": "withdrawBankroll", "value": 0, "args": [int(1000 * 10**18)]},
+    {"name": "withdrawBankroll", "value": 0, "args": [int(1500 * 10**18)]},
 ]
 
 
