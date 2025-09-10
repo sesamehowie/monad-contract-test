@@ -13,6 +13,7 @@ PLAYER1 = os.environ.get("PLAYER1")
 PLAYER2 = os.environ.get("PLAYER2")
 LOTTERY_PKEY = os.environ.get("LOTTERY_PKEY")
 RPS_PLAYER = os.environ.get("RPS_PLAYER")
+PRED_CLASSIC_OPERATOR = os.environ.get("PREDICTION_CLASSIC_OPERATOR_KEY")
 
 
 def read_txt(filename):
@@ -44,6 +45,11 @@ def main():
     client = EthClient(
         account_name="admin wallet", private_key=ADMIN_PKEY, network=Monad
     )
+    operator_client = EthClient(
+        account_name="classic operator",
+        private_key=PRED_CLASSIC_OPERATOR,
+        network=Monad,
+    )
 
     while True:
         try:
@@ -55,9 +61,15 @@ def main():
             else:
                 task = ALL_TASKS[choice - 1]
                 print("Selected task", task.name)
-                task.task(
-                    get_clients(client_items) if task.name == "MonRoll" else client
-                )
+
+                if task.name == "MonRoll":
+                    input_data = get_clients(client_items)
+                elif task.name == "Prediction Game (Classic)":
+                    input_data = operator_client
+                else:
+                    input_data = client
+
+                task.task(input_data)
 
         except Exception as e:
             print(f"Exception on entry point - {str(e)}")
