@@ -77,7 +77,7 @@ class BaseInterface:
             if estimate_gas:
                 gas = client.w3.eth.estimate_gas(tx_params)
             else:
-                gas = 500000
+                gas = 550000
 
             tx_params["gas"] = gas
 

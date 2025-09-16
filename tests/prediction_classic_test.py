@@ -1,4 +1,3 @@
-import time
 from src.interfaces.interfaces import PredictionClassicInterface
 
 
